@@ -2,6 +2,9 @@ import React from "react";
 import { Card, Image, Icon } from "semantic-ui-react";
 
 const UserCard = (props) => {
+  if(!props){
+    return <h1>No Users</h1>
+  }
   return (
     <>
       <Card>

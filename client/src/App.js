@@ -21,7 +21,7 @@ function App() {
           <Route exact path='/examples' component={Examples} />
           <Route exact path='/register' component={Register} />
           <Route exact path='/login' component={Login} />
-          <ProtectedRoute exact path='/userprofile/:id' component={UserProfile} />
+          <ProtectedRoute exact path='/users/profile' component={UserProfile} />
         </Switch>
       </MAIN_CONTAINER>
     </FetchUser>
