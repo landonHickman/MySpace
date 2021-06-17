@@ -12,7 +12,7 @@ const Register = () => {
   const {handleRegister} = useContext(AuthContext)
   //using the custom form input hook(initial value in field, label and placeholder for input)
   //need to drill down to get value. i.e. email.value
-  //FIXME: name isn't storeing on submit.
+
   //TODO: Remove dummy data.
   const name = useFormInput('Dummy', 'Name')
   const email = useFormInput('dummy@dummy.com', 'Email')
@@ -38,8 +38,7 @@ const Register = () => {
     <>
     <h1>Create User</h1>
       <Form onSubmit={handleSubmit}>
-        {/* FIXME: not currently working */}
-        <Form.Input {...name} label='Name doesnt work'/>
+        <Form.Input {...name} label='Name'/>
         {/* Spread out over variable to pass down the items in the useFormInput('', 'Email').
         pattern is used describe what is necessary to get a proper email.*/}
         <Form.Input {...email} pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"/>

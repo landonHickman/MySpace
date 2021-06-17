@@ -1,13 +1,13 @@
 import React from 'react'
+import UserCard from './UserCard'
+import { Card } from 'semantic-ui-react'
 
 //pass in data i.e. data={data} then it outputs a mapped over array in jsx.
 const RenderData = ({data}) => {
-  return data.map(d => {
-    return (
-      <div key={d.id}>
-        <h4>{d.name}</h4>
-      </div>
-    )
-  })
+  return(
+  <Card.Group itemsPerRow={4}>
+    {data.map(d => <UserCard key={d.id} {...d}/>)}
+  </Card.Group>
+  )
 }
 export default RenderData
