@@ -1,14 +1,15 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import useAxiosOnMount from '../customHooks/useAxiosOnMount'
 import RenderData from '../components/RenderData'
+import { AuthContext } from '../providers/AuthProvider'
 
 const Home = () => {
-  //FIXME: dont know if im using the correct route.
-  const {data, error, loading} = useAxiosOnMount('/api/auth/sign_in')
+  const {user} = useContext(AuthContext)
+
+  const {data, error, loading} = useAxiosOnMount('/api/users')
   console.log(data)
   return(
     <div style={{textAlign: 'center'}}>
-      {/* FIXME: doesnt work currently */}
       <RenderData data={data}/>
     </div>
   )
