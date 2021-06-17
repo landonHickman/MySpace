@@ -8,6 +8,7 @@ import Examples from './pages/Examples';
 import {MAIN_CONTAINER} from './styles/styles'
 import Register from './pages/Register';
 import Login from './pages/Login';
+import UserProfile from './pages/UserProfile';
 
 function App() {
   return (
@@ -17,10 +18,9 @@ function App() {
     <Switch>
       <Route exact path='/' component={Home} />
       <Route exact path='/examples' component={Examples} />
-      <Route exact path='/about' component={About} />
-      <Route exact path='/tests' component={Tests} />
       <Route exact path='/register' component={Register} />
       <Route exact path='/login' component={Login} />
+      <Route exact path='/userprofile/:id' component={UserProfile} />
     </Switch>
     </MAIN_CONTAINER>
     </>

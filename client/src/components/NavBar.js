@@ -13,14 +13,20 @@ const NavBar = () => {
   // authenticated used to see if user is logged in or not.
   // handleLogout logs user out
   const {authenticated, handleLogout} = useContext(AuthContext)
-  // function to position to the right of navbar.
+  // function to position the navbar.
   // also has an if else to check for user to see what is needed to display.
-  const getRightNav = () => {
+  const getLoginNav = () => {
     if(authenticated){
       return(
+        <>
+        <Menu.Menu position='left'>
+          <Link to='/'><Menu.Item active={pathname=== '/'}>Home</Menu.Item></Link>
+        </Menu.Menu>
         <Menu.Menu position='right'>
+          <Link to='/userprofile/:id'><Menu.Item active={pathname=== '/userprofile/:id'}>Profile</Menu.Item></Link>
           <Menu.Item onClick={()=>handleLogout(history)}>Logout</Menu.Item>
         </Menu.Menu>
+        </>
       )
     }else{
       return(
@@ -40,11 +46,9 @@ const NavBar = () => {
   return(
     <>
       <Menu pointing secondary>
-        <Link to='/'><Menu.Item active={pathname=== '/'}>Home</Menu.Item></Link>
-        <Link to='/about'><Menu.Item active={pathname=== '/about'}>About</Menu.Item></Link>
+        {/* TODO: remove examples. */}
         <Link to='/examples'><Menu.Item active={pathname=== '/examples'}>Examples</Menu.Item></Link>
-        <Link to='/tests'><Menu.Item active={pathname=== '/tests'}>Tests</Menu.Item></Link>
-        {getRightNav()}
+        {getLoginNav()}
       </Menu>
     </>
   )

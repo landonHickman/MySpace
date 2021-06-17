@@ -10,7 +10,7 @@ export const AuthConsumer = AuthContext.Consumer
 
 const AuthProvider = (props) => {
   const [user, setUser] = useState(null)
-
+  
   //function created to process the register process
   //userFormData is the object that was passed from the Register page, history was also passed along.
   const handleRegister = async (userFormData, history) => {
@@ -31,12 +31,14 @@ const AuthProvider = (props) => {
     try{
       let res = await axios.post(`/api/auth/sign_in`, userFormData)
       setUser(res.data.data)
+      console.log('user',user)
       history.push('/')
     }catch(err){
       alert('error occurred check console')
       //drilled down so it will show the message i want to look for
       console.log('Handle Login error',err.response.data.errors.full_messages)
     }
+    console.log('user',user)
   }
 
   const handleLogout = async (history) => {
