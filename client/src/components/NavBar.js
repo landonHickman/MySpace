@@ -12,7 +12,7 @@ const NavBar = () => {
   const history = useHistory()
   // authenticated used to see if user is logged in or not.
   // handleLogout logs user out
-  const {authenticated, handleLogout} = useContext(AuthContext)
+  const {authenticated, handleLogout, user} = useContext(AuthContext)
   // function to position the navbar.
   // also has an if else to check for user to see what is needed to display.
   const getLoginNav = () => {
@@ -23,7 +23,7 @@ const NavBar = () => {
           <Link to='/'><Menu.Item active={pathname=== '/'}>Home</Menu.Item></Link>
         </Menu.Menu>
         <Menu.Menu position='right'>
-          <Link to='/users/profile'><Menu.Item active={pathname=== '/users/profile'}>Profile</Menu.Item></Link>
+          <Link to='/users/profile'><Menu.Item active={pathname=== '/users/profile'}>{user.name}</Menu.Item></Link>
           <Menu.Item onClick={()=>handleLogout(history)}>Logout</Menu.Item>
         </Menu.Menu>
         </>

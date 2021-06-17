@@ -20,6 +20,7 @@ class Api::UsersController < ApplicationController
   end
 
   def destroy
+    render json: @user.destroy
   end
 
   private

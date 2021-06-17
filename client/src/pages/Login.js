@@ -14,7 +14,7 @@ const Login = () => {
   //need to drill down to get value. i.e. email.value
   //TODO: Remove dummy data.
   const email = useFormInput('dummy@dummy.com', 'Email')
-  const password = useFormInput('dummydata', 'Password')
+  const password = useFormInput('1234567890', 'Password')
   
   
   const handleSubmit = (e) => {

@@ -34,16 +34,14 @@ const AuthProvider = (props) => {
       console.log('user',user)
       history.push('/')
     }catch(err){
-      alert('error occurred check console')
-      //drilled down so it will show the message i want to look for
-      console.log('Handle Login error',err.response.data.errors.full_messages)
+      alert('User does not exist.')
     }
     console.log('user',user)
   }
 
   const handleLogout = async (history) => {
     try {
-      let res = await axios.delete(`/api/auth/sign_out`)
+      await axios.delete(`/api/auth/sign_out`)
       setUser(null)
       history.push('/login')
     }catch(err){

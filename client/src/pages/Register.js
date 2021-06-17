@@ -16,8 +16,8 @@ const Register = () => {
   //TODO: Remove dummy data.
   const name = useFormInput('Dummy', 'Name')
   const email = useFormInput('dummy@dummy.com', 'Email')
-  const password = useFormInput('dummydata', 'Password')
-  const ConfirmPassword = useFormInput('dummydata', 'Confirm Password')
+  const password = useFormInput('1234567890', 'Password')
+  const ConfirmPassword = useFormInput('1234567890', 'Confirm Password')
 
   const handleSubmit = (e) => {
     //prevents page from refreshing

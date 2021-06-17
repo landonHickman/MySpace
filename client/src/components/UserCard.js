@@ -13,10 +13,8 @@ const UserCard = (props) => {
           <Card.Header>{props.name}</Card.Header>
         </Card.Content>
         <Card.Content extra>
-          <a>
             <Icon name="mail" />
             {props.email}
-          </a>
         </Card.Content>
       </Card>
     </>
