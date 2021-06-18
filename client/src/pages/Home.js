@@ -9,8 +9,6 @@ const Home = () => {
 
   const {data, error, loading, setData} = useAxiosOnMount('/api/users')
 
-
-
   return(
 
     <div style={{textAlign: 'center'}}>
