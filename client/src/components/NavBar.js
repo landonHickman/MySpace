@@ -47,7 +47,6 @@ const NavBar = () => {
     <>
       <Menu pointing secondary>
         {/* TODO: remove examples. */}
-        <Link to='/examples'><Menu.Item active={pathname=== '/examples'}>Examples</Menu.Item></Link>
         {getLoginNav()}
       </Menu>
     </>

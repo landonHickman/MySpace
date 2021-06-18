@@ -14,7 +14,7 @@ const Home = () => {
   }
 
   // removeCurrentUser(user.id)
-
+  console.log(data)
   return(
     <div style={{textAlign: 'center'}}>
       <Card.Group itemsPerRow={4}>

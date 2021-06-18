@@ -7,7 +7,7 @@ const UserCard = (props) => {
   }
   return (
     <>
-      <Card>
+      <Card style={{maxWidth: '300px', minWidth: '150px'}}>
         <Image src={props.image} wrapped ui={false} />
         <Card.Content>
           <Card.Header>{props.name}</Card.Header>
