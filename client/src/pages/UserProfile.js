@@ -18,7 +18,7 @@ const UserProfile = (props) => {
   const { data, loading, error} = useAxiosOnMount(
     `/api/users/${user.id}`
   );
-  const { data: data1 } = useAxiosOnMount(
+  const { data: data1, setData: setData1 } = useAxiosOnMount(
     `/api/users/${user.id}/posts`
   );
 
@@ -28,6 +28,11 @@ const UserProfile = (props) => {
     history.push(`/register`);
     await axios.delete(`/api/users/${id}`);
   };
+
+  const deletePost = async (id) => {
+    let res = await axios.delete(`/api/users/${user.id}/posts/${id}`)
+    setData1(data1.filter( p=> p.id !== res.data.id))
+  }
 
   const checkPosts = () => {
     if (data1.length === 0) {
@@ -65,7 +70,7 @@ const UserProfile = (props) => {
               }}
             >
               {data1.map((d) => (
-                <PostCard key={d.id} {...d} />
+                <PostCard key={d.id} {...d} deletePost={deletePost}/>
               ))}
             </Card.Group>
           }

@@ -13,11 +13,8 @@ const CreatePost = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log(title.value)
-    console.log(body.value)
     try{
-      let res = await axios.post(`/api/users/${user.id}/posts`, {title: title.value, body: body.value})
-      console.log(res.data)
+      await axios.post(`/api/users/${user.id}/posts`, {title: title.value, body: body.value})
       history.push('/users/profile')
     }catch(err){
       alert('error')
