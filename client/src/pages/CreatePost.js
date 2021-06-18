@@ -8,8 +8,8 @@ import { useHistory } from 'react-router'
 const CreatePost = () => {
   const history = useHistory()
   const {user} = useContext(AuthContext)
-  const title = useFormInput('Title of Post', 'Title')
-  const body = useFormInput('Body', 'Body')
+  const title = useFormInput('', 'Title')
+  const body = useFormInput('', 'Body')
 
   const handleSubmit = async (e) => {
     e.preventDefault()

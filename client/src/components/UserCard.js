@@ -50,7 +50,7 @@ const UserCard = (props) => {
             <Card.Header>{props.name}</Card.Header>
           </Card.Content>
           <Card.Content>
-            <Button onClick={() => setShowPost(!showPost)}>
+            <Button onClick={() => setShowPost(!showPost)} color='blue'>
               <Icon name="angle double down" />
               Posts
             </Button>

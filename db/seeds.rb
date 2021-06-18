@@ -16,8 +16,6 @@ Test.create(name: 'Test3')
 Test.create(name: 'Test4')
 Test.create(name: 'Test5')
 
-# TODO: change image 
-
 5. times do
   name = Faker::Name.name
   email = Faker::Internet.email

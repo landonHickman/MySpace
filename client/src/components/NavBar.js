@@ -47,7 +47,6 @@ const NavBar = () => {
   return(
     <>
       <Menu pointing secondary>
-        {/* TODO: remove examples. */}
         {getLoginNav()}
       </Menu>
     </>

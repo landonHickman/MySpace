@@ -13,11 +13,10 @@ const Register = () => {
   //using the custom form input hook(initial value in field, label and placeholder for input)
   //need to drill down to get value. i.e. email.value
 
-  //TODO: Remove dummy data.
-  const name = useFormInput('Dummy', 'Name')
-  const email = useFormInput('dummy@dummy.com', 'Email')
-  const password = useFormInput('1234567890', 'Password')
-  const ConfirmPassword = useFormInput('1234567890', 'Confirm Password')
+  const name = useFormInput('', 'Name')
+  const email = useFormInput('', 'Email')
+  const password = useFormInput('', 'Password')
+  const ConfirmPassword = useFormInput('', 'Confirm Password')
   const image = 'https://st2.depositphotos.com/1009634/7235/v/600/depositphotos_72350117-stock-illustration-no-user-profile-picture-hand.jpg'
 
   const handleSubmit = (e) => {
