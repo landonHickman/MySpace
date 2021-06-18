@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   namespace :api do
     get '/tests', to: 'tests#index'
     get '/users/profile/:id', to: 'users#usersprofile'
-    resources :users
+    resources :users do
+      resources :posts
+    end
   end
 end
