@@ -9,13 +9,10 @@ const Home = () => {
 
   const {data, error, loading, setData} = useAxiosOnMount('/api/users')
 
-  const removeCurrentUser = (id) => {
-    setData(data.filter(d=> d.id !== id))
-  }
 
-  // removeCurrentUser(user.id)
-  console.log(data)
+
   return(
+
     <div style={{textAlign: 'center'}}>
       <Card.Group itemsPerRow={4}>
         {data.map(d => <UserCard key={d.id} {...d}/>)}

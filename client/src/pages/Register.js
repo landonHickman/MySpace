@@ -45,7 +45,7 @@ const Register = () => {
         <Form.Input {...email} pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"/>
         <Form.Input {...password} type='password'/>
         <Form.Input {...ConfirmPassword} placeholder='Confirm Password'/>
-        <Form.Button>Submit</Form.Button>
+        <Form.Button color='blue'>Submit</Form.Button>
       </Form>
     </>
   )

@@ -22,7 +22,7 @@ const UserProfile = (props) => {
   const { data: data1, setData: setData1 } = useAxiosOnMount(
     `/api/users/${user.id}/posts`
   );
-  console.log("data1.length", data1.length);
+
 
   const deleteUser = async (id) => {
     setUser(null);
@@ -31,9 +31,7 @@ const UserProfile = (props) => {
   };
 
   const checkPosts = () => {
-    console.log("check posts");
     if (data1.length === 0) {
-      console.log("inside if");
       return (
         <Card
           style={{
@@ -55,7 +53,6 @@ const UserProfile = (props) => {
         </Card>
       );
     } else {
-      console.log("inside else");
       return (
         <div>
           {showPost && (

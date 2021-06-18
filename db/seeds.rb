@@ -21,7 +21,7 @@ Test.create(name: 'Test5')
 5. times do
   name = Faker::Name.name
   email = Faker::Internet.email
-  image = Faker::Avatar.image(slug: name, size: "100x100", format: "png", set: "set4")
+  image = Faker::Avatar.image(slug: name, size: "300x300", format: "png", set: "set5")
   password = '1234567890'
   user = User.create(name: name, email: email, image: image, password: password)
   5.times do

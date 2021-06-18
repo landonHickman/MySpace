@@ -14,27 +14,16 @@ const UserForm = () => {
   //need to drill down to get value. i.e. email.value
 
   const name = useFormInput(`${user.name}`, 'Name')
-  const email = useFormInput(`${user.email}`, 'Email')
-  //FIXME: password change doesn't work.
+
   //TODO: Remove dummy data.
-  const password = useFormInput('1234567890', 'Password')
-  const ConfirmPassword = useFormInput('1234567890', 'Confirm Password')
   const image = useFormInput('https://st2.depositphotos.com/1009634/7235/v/600/depositphotos_72350117-stock-illustration-no-user-profile-picture-hand.jpg', 'Image')
 
   const handleSubmit = (e) => {
     //prevents page from refreshing
     e.preventDefault()
     //Front end validation
-    if(password.value !== ConfirmPassword.value || password.value.length < 6){
-      if(password.value !== ConfirmPassword.value){
-        alert('Passwords do not Match!')
-      }else{
-        alert('Password must be longer than 6 characters.')
-      }
-    }else{
+    handleUpdate({name: name.value, image: image.value, id: user.id}, history)
 
-      handleUpdate({name: name.value, email: email.value, password: password.value, image: image.value, id: user.id}, history)
-    }
 
   }
   return(
@@ -44,12 +33,10 @@ const UserForm = () => {
         <Form.Input {...name} label='Name'/>
         {/* Spread out over variable to pass down the items in the useFormInput('', 'Email').
         pattern is used describe what is necessary to get a proper email.*/}
-        <Form.Input {...email} pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"/>
         <Form.Input {...image} placeholder='Enter Image Address'/>
         {/* //TODO: make sure to remove label */}
-        <Form.Input {...password} type='password' label='Password Does not work.'/>
-        <Form.Input {...ConfirmPassword} placeholder='Confirm Password'/>
-        <Form.Button>Submit</Form.Button>
+        
+        <Form.Button color='green'>Submit</Form.Button>
       </Form>
     </>
   )
