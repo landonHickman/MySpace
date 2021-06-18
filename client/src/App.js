@@ -9,6 +9,7 @@ import Login from './pages/Login';
 import UserProfile from './pages/UserProfile';
 import FetchUser from './components/FetchUser';
 import ProtectedRoute from './components/ProtectedRoute';
+import RedirectToUserProfile from './components/RedirectToUserProfile';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route exact path='/examples' component={Examples} />
           <Route exact path='/register' component={Register} />
           <Route exact path='/login' component={Login} />
+          <Route exact path='/redirectToUserProfile' component={RedirectToUserProfile} />
           <ProtectedRoute exact path='/users/profile' component={UserProfile} />
         </Switch>
       </MAIN_CONTAINER>

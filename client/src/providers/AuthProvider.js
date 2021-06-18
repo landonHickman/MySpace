@@ -25,18 +25,29 @@ const AuthProvider = (props) => {
       console.log('Handle Register error',err.response.data.errors.full_messages)
     }
   }
+
+  const handleUpdate = async (userFormData, history) => {
+    try{
+      let res = await axios.put(`/api/users/${userFormData.id}`, userFormData)
+      setUser(res.data)
+      
+      history.push('/redirectToUserProfile')
+    }catch(err){
+      alert('error occurred check console')
+      console.log('Handle Update error',err)
+    }
+  }
+
   //logging existing user here
   const handleLogin = async (userFormData, history) => {
     //axios call here
     try{
       let res = await axios.post(`/api/auth/sign_in`, userFormData)
       setUser(res.data.data)
-      console.log('user',user)
       history.push('/')
     }catch(err){
       alert('User does not exist.')
     }
-    console.log('user',user)
   }
 
   const handleLogout = async (history) => {
@@ -62,6 +73,7 @@ const AuthProvider = (props) => {
       handleLogin,
       handleLogout,
       setUser,
+      handleUpdate,
     }}>
       {props.children}
     </AuthContext.Provider>
