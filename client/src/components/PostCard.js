@@ -1,5 +1,8 @@
+
 import React from "react";
-import { Card, Icon } from "semantic-ui-react";
+import { Card, Icon} from "semantic-ui-react";
+import { Link } from "react-router-dom";
+
 
 const PostCard = ({deletePost, id, title, body}) => {
 
@@ -12,10 +15,17 @@ const PostCard = ({deletePost, id, title, body}) => {
           {body}
         <Card.Content extra style={{display: 'flex'}}>
           <div>
-            <Icon name="edit" />
+            <Link to={{
+              
+              pathname: '/updatePost',
+              id: id,
+              title: title,
+              body: body,
+              }}><Icon name="edit" style={{cursor: 'pointer'}}/>
               Edit
+            </Link>
           </div>
-          <div onClick={()=>deletePost(id)}>
+          <div onClick={()=>deletePost(id)} style={{cursor: 'pointer'}}>
             <Icon name="trash" />
               Delete
           </div>

@@ -12,6 +12,7 @@ import ProtectedRoute from './components/ProtectedRoute';
 import RedirectToUserProfile from './components/RedirectToUserProfile';
 import PostCard from './components/PostCard';
 import CreatePost from './pages/CreatePost';
+import UpdatePost from './pages/UpdatePost';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route exact path='/examples' component={Examples} />
           <ProtectedRoute exact path='/postCard' component={PostCard} />
           <ProtectedRoute exact path='/createPost' component={CreatePost} />
+          <ProtectedRoute exact path='/updatePost' component={UpdatePost} />
           <Route exact path='/register' component={Register} />
           <Route exact path='/login' component={Login} />
           <Route exact path='/redirectToUserProfile' component={RedirectToUserProfile} />

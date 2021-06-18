@@ -12,9 +12,8 @@ const Login = () => {
   const {handleLogin} = useContext(AuthContext)
   //using the custom form input hook(initial value in field, label and placeholder for input)
   //need to drill down to get value. i.e. email.value
-  //TODO: Remove dummy data.
-  const email = useFormInput('milly@oberbrunner.biz', 'Email')
-  const password = useFormInput('1234567890', 'Password')
+  const email = useFormInput('', 'Email')
+  const password = useFormInput('', 'Password')
   
   
   const handleSubmit = (e) => {
