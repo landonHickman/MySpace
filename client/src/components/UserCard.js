@@ -2,13 +2,12 @@ import React, { useContext, useState } from "react";
 import { Card, Image, Icon, Button } from "semantic-ui-react";
 import useAxiosOnMount from "../customHooks/useAxiosOnMount";
 import { AuthContext } from "../providers/AuthProvider";
-import PostCard from "./PostCard";
 
 const UserCard = (props) => {
   const { user } = useContext(AuthContext);
   const [showPost, setShowPost] = useState(false);
 
-  const { data: data1, setData: setData1 } = useAxiosOnMount(
+  const { data: data1 } = useAxiosOnMount(
     `/api/users/${props.id}/posts`
   );
 

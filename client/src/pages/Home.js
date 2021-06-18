@@ -1,13 +1,11 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import useAxiosOnMount from '../customHooks/useAxiosOnMount'
-import { AuthContext } from '../providers/AuthProvider'
 import { Card } from 'semantic-ui-react'
 import UserCard from '../components/UserCard'
 
 const Home = () => {
-  const {user} = useContext(AuthContext)
 
-  const {data, error, loading, setData} = useAxiosOnMount('/api/users')
+  const {data} = useAxiosOnMount('/api/users')
 
   return(
 

@@ -1,4 +1,5 @@
 class Api::PostsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_user
   before_action :set_post, only: [:show, :update, :destroy]
 
@@ -11,7 +12,7 @@ class Api::PostsController < ApplicationController
   end
 
   def create
-    @post = @user.posts.new(post_params)
+    @post = current_user.posts.new(post_params)
     if(@post.save)
       render json: @post
     else

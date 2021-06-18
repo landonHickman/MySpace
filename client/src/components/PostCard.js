@@ -4,14 +4,12 @@ import { Card, Icon } from "semantic-ui-react";
 const PostCard = (props) => {
 
   return (
-    <div key={props.id} style={{display: 'flex', flexDirection: 'column'}}>
-      <Card style={{padding: '10px', margin: '10px'}}>
+    <div key={props.id} style={{margin: '0px'}}>
+      <Card style={{padding: '10px', margin: '10px', height: '220px'}}>
         <Card.Content >
           <Card.Header>{props.title}</Card.Header>
         </Card.Content>
-        <Card.Description>
           {props.body}
-        </Card.Description>
         <Card.Content extra>
             <Icon name="edit" />
               Edit

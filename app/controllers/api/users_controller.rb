@@ -3,10 +3,13 @@ class Api::UsersController < ApplicationController
 
 
   def index
+    # render json: User.all
     render json: User.where.not(id: current_user.id)
   end
 
   def show
+    # @user = User.find(params[:id])
+    # render json: @user
     render json: current_user
   end
 
@@ -31,6 +34,8 @@ class Api::UsersController < ApplicationController
   end
 
   private
+
+  
 
   def user_params
     params.require(:user).permit(:name, :email, :image, :password)

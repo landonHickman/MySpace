@@ -4,27 +4,26 @@ import useAxiosOnMount from "../customHooks/useAxiosOnMount";
 import Spinner from "../components/Spinner";
 import ErrorMessage from "../components/ErrorMessage";
 import UserCard from "../components/UserCard";
-import { Card, Button, Icon } from "semantic-ui-react";
+import { Card, Button} from "semantic-ui-react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 import UserForm from "./UserForm";
 import PostCard from "../components/PostCard";
 
 const UserProfile = (props) => {
-  const { user, handleLogout, setUser, handleUpdate } = useContext(AuthContext);
+  const { user, setUser, handleUpdate } = useContext(AuthContext);
   const [showForm, setShowForm] = useState(false);
-  const [showPost, setShowPost] = useState(true);
   const history = useHistory();
 
-  const { data, loading, error, setData } = useAxiosOnMount(
+  const { data, loading, error} = useAxiosOnMount(
     `/api/users/${user.id}`
   );
-  const { data: data1, setData: setData1 } = useAxiosOnMount(
+  const { data: data1 } = useAxiosOnMount(
     `/api/users/${user.id}/posts`
   );
 
 
-  const deleteUser = async (id) => {
+  const deleteUser = async (id) => {  
     setUser(null);
     history.push(`/register`);
     await axios.delete(`/api/users/${id}`);
@@ -55,7 +54,7 @@ const UserProfile = (props) => {
     } else {
       return (
         <div>
-          {showPost && (
+          {
             <Card.Group
               itemsPerRow={1}
               style={{
@@ -69,7 +68,7 @@ const UserProfile = (props) => {
                 <PostCard key={d.id} {...d} />
               ))}
             </Card.Group>
-          )}
+          }
         </div>
       );
     }

@@ -11,6 +11,7 @@ import FetchUser from './components/FetchUser';
 import ProtectedRoute from './components/ProtectedRoute';
 import RedirectToUserProfile from './components/RedirectToUserProfile';
 import PostCard from './components/PostCard';
+import CreatePost from './pages/CreatePost';
 
 function App() {
   return (
@@ -21,7 +22,8 @@ function App() {
         <Switch>
           <ProtectedRoute exact path='/' component={Home} />
           <Route exact path='/examples' component={Examples} />
-          <Route exact path='/postCard' component={PostCard} />
+          <ProtectedRoute exact path='/postCard' component={PostCard} />
+          <ProtectedRoute exact path='/createPost' component={CreatePost} />
           <Route exact path='/register' component={Register} />
           <Route exact path='/login' component={Login} />
           <Route exact path='/redirectToUserProfile' component={RedirectToUserProfile} />

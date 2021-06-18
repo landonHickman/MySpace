@@ -23,6 +23,7 @@ const NavBar = () => {
           <Link to='/'><Menu.Item active={pathname=== '/'}>Home</Menu.Item></Link>
         </Menu.Menu>
         <Menu.Menu position='right'>
+          <Link to='/createPost'><Menu.Item active={pathname=== '/createPost'}>Create Post</Menu.Item></Link>
           <Link to='/users/profile'><Menu.Item active={pathname=== '/users/profile'}>{user.name}</Menu.Item></Link>
           <Menu.Item onClick={()=>handleLogout(history)}>Logout</Menu.Item>
         </Menu.Menu>
